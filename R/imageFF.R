@@ -1,4 +1,4 @@
-require(raster)
+
 
 
 plotFF <- function(r,returnFF=F){

@@ -25,8 +25,12 @@ devtools::install_github("imageFF", "davesteps")
 require(imageFF)
 require(raster)
 r <- raster(ncols=36, nrows=18)
-r[] <- 1:ncell(r)
+r[] <- rnorm(length(r[]))
+#plot fourier transform
 plotFF(r)
+#apply pie slice filter
+rFF <- imageFF(r,d = 60,l = 0.5,t = 20)
+plot(rFF)
 ```
 
 
