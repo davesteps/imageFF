@@ -12,8 +12,12 @@ I wrote the functions to remove stripe noise from acoustic data, in the spirit o
 ###install:
 
 If you don't have devtools install it, then the package from github:
+```r
 
-
+if (!require("devtools"))
+  install.packages("devtools")
+devtools::install_github("imageFF", "davesteps")
+```
 
 ----
 ###Usage:
