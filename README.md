@@ -23,14 +23,13 @@ devtools::install_github("imageFF", "davesteps")
 ###Usage:
 ```r
 require(imageFF)
-require(raster)
-r <- raster(ncols=36, nrows=18)
+r <- matrix(nrow = 36, ncol = 40)
 r[] <- rnorm(length(r[]))
 #plot fourier transform
 plotFF(r)
 #apply pie slice filter
-rFF <- imageFF(r,d = 60,l = 0.5,t = 20)
-plot(rFF)
+rFF <- imageFF(r,d = 60,l = 0.6,t = 20)
+
 ```
 
 

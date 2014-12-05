@@ -1,8 +1,8 @@
 
 
 
-plotFF <- function(r,returnFF=F){
-  #r <- bs
+plotFF <- function(r){
+  #require(raster)
   if(class(r)=='RasterLayer'){r <- as.matrix(r)}
   rm <- r
   
@@ -26,6 +26,7 @@ plotFF <- function(r,returnFF=F){
 }
 
 imageFF <- function(r,d,l,t,lwl_buf=F,bd=0.1){
+  #require(raster)
   #l <- 0.3#length of slice
   #d <- 45#major direction
   #t <- 6#taper window
