@@ -22,13 +22,20 @@ devtools::install_github("imageFF", "davesteps")
 ----
 ###Usage:
 ```r
-require(imageFF)
-r <- matrix(nrow = 36, ncol = 40)
-r[] <- rnorm(length(r[]))
+n <- nrow(volcano)
+signal <- 20*(sin(2*pi*(1:n)/15)) +30*(sin(2*pi*(1:n)/10))
+plot(signal,type='l')
+image(volcano)
+image((volcano+signal))
 #plot fourier transform
-plotFF(r)
+plotFF(volcano+signal)
 #apply pie slice filter
-rFF <- imageFF(r,d = 60,l = 0.6,t = 20)
+rFF <- imageFF(volcano+signal,d = 90,l = 0.5,t = 5,lwl_buf=T,bd=0.025)
+image(volcano)
+image(rFF)
+hist(((rFF-data)/data)[])
+plot(volcano,rFF)
+
 
 ```
 
